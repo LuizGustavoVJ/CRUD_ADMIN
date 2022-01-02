@@ -20,6 +20,7 @@ class Client extends Model
     protected $fillable = [
         'name',
         'email',
+        'image_url',
         'password',
         'city'
     ];
@@ -33,7 +34,6 @@ class Client extends Model
         'id',
         'created_at',
         'updated_at',
-        'image_url',
         'password',
         'remember_token',
     ];
