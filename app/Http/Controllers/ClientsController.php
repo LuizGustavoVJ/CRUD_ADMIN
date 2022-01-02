@@ -34,13 +34,14 @@ class ClientsController extends Controller
             // Verifica se informou o arquivo e se é válido
             if ($request->hasFile('image_url') && $request->file('image_url')->isValid()) {
                 // Define um aleatório para o arquivo baseado no timestamps atual
-                $name = uniqid(date('HisYmd'));
+                $fileName = uniqid(date('HisYmd'));
                 // Recupera a extensão do arquivo
                 $extension = $request->image_url->extension();
                 // Define o nome do diretório para salvar o arquivo em: (public/upload/user_id/client_id)
                 $diretorio = "public/upload/clients";
                 // Define o diretório onde as pastas ficarão
                 $uploadfolder = $diretorio;
+                // Verifica os tipos suportados
                 if ($extension == 'jpg') {
                     $uploadfolder = $diretorio . '/images';
                 } elseif ($extension == 'jpeg' || $extension == 'png') {
@@ -49,37 +50,31 @@ class ClientsController extends Controller
                     return "Arquivo não suportado!";
                 }
                 // Define finalmente o nome
-                $nameFile = "{$name}.{$extension}";
+                $nameFile = "{$fileName}.{$extension}";
                 // Faz o upload e envia o arquivo para a pasta determinada dentro de storage:
                 $upload = $request->image_url->storeAs($uploadfolder, $nameFile);
                 // Pega o caminho completo do arquivo e tranforma em link
                 $url = Storage::url($upload);
 
-                // Verifica se NÃO deu certo o upload (Redireciona de volta)
+                // Verifica se não deu certo o upload (Redireciona de volta)
                 if (!$upload)
                     return redirect()
                         ->back()
                         ->with('error', 'Falha ao fazer upload')
                         ->withInput();
             }
+            Client::create($data);
 
-            Client::create();
-
-            return response()->json(!isset($url) ? ['data', $data] : ['data' => $data, 'url' => $url]);
+            return response()->json(!isset($url) ?
+                ['data', $data] :
+                ['data' => $data, 'url' => $url]);
         } catch (\Exception $e) {
-            return response()->json(['data' => ['status' => 500, 'msg' => 'usuário não cadastrado', 'method' => $e]]);
+            return response()->json(['data' => [
+                'status' => 500,
+                'msg' => 'Usuário não cadastrado',
+                'method' => $e
+            ]]);
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -91,7 +86,24 @@ class ClientsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dataRequest = $request->all();
+
+        try {
+            $data = Client::findOrFail($id);
+            $data->update($dataRequest);
+
+            return response()->json(['data' => [
+                'status' => 200,
+                'msg' => 'Usuário atualizado com sucesso',
+                'data' => $data
+            ]]);
+        } catch (\Exception $e) {
+            return response()->json(['data' => [
+                'status' => 500,
+                'msg' => 'Usuário não atualizado, tente novamente',
+                'method' => $e
+            ]]);
+        }
     }
 
     /**
@@ -102,6 +114,22 @@ class ClientsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Client::find($id);
+
+        try {
+            $data->delete();
+
+            return response()->json(['data' => [
+                'status' => 200,
+                'msg' => 'Usuário deletado com sucesso',
+                'data' => $data
+            ]]);
+        } catch (\Exception $e) {
+            return response()->json(['data' => [
+                'status' => 500,
+                'msg' => 'Usuário não deletado, tente novamente',
+                'method' => $e
+            ]]);
+        }
     }
 }

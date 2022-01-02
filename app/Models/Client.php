@@ -21,8 +21,7 @@ class Client extends Model
         'name',
         'email',
         'password',
-        'city',
-        'image_url'
+        'city'
     ];
 
     /**
@@ -34,6 +33,7 @@ class Client extends Model
         'id',
         'created_at',
         'updated_at',
+        'image_url',
         'password',
         'remember_token',
     ];
