@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Access\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -46,4 +47,9 @@ class Client extends Model
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function user()
+    {
+        return $this->belongsToJson(User::class, 'client_ids');
+    }
 }

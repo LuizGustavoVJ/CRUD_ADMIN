@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\Access\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ClientPostRequest;
@@ -30,6 +31,8 @@ class ClientsController extends Controller
     public function store(ClientPostRequest $request)
     {
         $data = $request->all();
+        // Obtem o Id do usuário logado
+        $user_logado = auth()->user()->id;
 
         try {
             // Verifica se informou o arquivo e se é válido
@@ -64,6 +67,11 @@ class ClientsController extends Controller
                         ->with('error', 'Falha ao fazer upload')
                         ->withInput();
             }
+            // Armazena o usuario logado na variável
+            $dados = User::find($user_logado);
+            // Grava o Id do client para o usuário na tabela de users
+            $dados->clients()->attach($this->client)->save();
+
             Client::create($data);
 
             return response()->json(!isset($url) ?

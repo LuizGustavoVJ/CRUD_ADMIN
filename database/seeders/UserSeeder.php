@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Access\User;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'User_1020304050',
             'email' => 'dev@empiricus.com',
-            'password' => '1020304050',
+            'password' => base64_encode('1020304050'),
             'city' => 'Maranguape',
 
         ]);
