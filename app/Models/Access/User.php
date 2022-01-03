@@ -2,17 +2,15 @@
 
 namespace App\Models\Access;
 
-use App\Models\Client;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Staudenmeir\EloquentJsonRelations\HasJsonRelationships;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use HasFactory, Notifiable, HasJsonRelationships;
+    use HasFactory, Notifiable;
 
     protected $table = 'users';
     protected $primarykey = 'id';
@@ -79,6 +77,6 @@ class User extends Authenticatable implements JWTSubject
 
     public function clients()
     {
-        return $this->belongsToJson(Client::class, 'client_ids');
+        return $this->hasMany(Client::class);
     }
 }

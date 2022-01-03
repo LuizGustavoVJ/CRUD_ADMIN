@@ -31,8 +31,6 @@ class ClientsController extends Controller
     public function store(ClientPostRequest $request)
     {
         $data = $request->all();
-        // Obtem o Id do usuário logado
-        $user_logado = auth()->user()->id;
 
         try {
             // Verifica se informou o arquivo e se é válido
@@ -67,11 +65,6 @@ class ClientsController extends Controller
                         ->with('error', 'Falha ao fazer upload')
                         ->withInput();
             }
-            // Armazena o usuario logado na variável
-            $dados = User::find($user_logado);
-            // Grava o Id do client para o usuário na tabela de users
-            $dados->clients()->attach($this->client)->save();
-
             Client::create($data);
 
             return response()->json(!isset($url) ?
@@ -81,6 +74,24 @@ class ClientsController extends Controller
             return response()->json(['data' => [
                 'status' => 500,
                 'msg' => 'Usuário não cadastrado',
+                'method' => $e
+            ]]);
+        }
+    }
+
+    public function show($id)
+    {
+        try {
+            $client = Client::findOrFail($id);
+            return response()->json(['data' => [
+                'status' => 200,
+                'msg' => 'Usuário localizado com sucesso',
+                'data' =>  $client
+            ]]);
+        } catch (\Exception $e) {
+            return response()->json(['data' => [
+                'status' => 500,
+                'msg' => 'Usuário não atualizado, tente novamente',
                 'method' => $e
             ]]);
         }
@@ -123,9 +134,8 @@ class ClientsController extends Controller
      */
     public function destroy($id)
     {
-        $data = Client::find($id);
-
         try {
+            $data = Client::find($id);
             $data->delete();
 
             return response()->json(['data' => [

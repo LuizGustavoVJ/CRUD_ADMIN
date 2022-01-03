@@ -50,6 +50,6 @@ class Client extends Model
 
     public function user()
     {
-        return $this->belongsToJson(User::class, 'client_ids');
+        return $this->belongsTo(User::class);
     }
 }
