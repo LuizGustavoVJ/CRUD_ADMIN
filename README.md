@@ -63,7 +63,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 # O Projeto
 
-A ideia é trazer um repositório com um Crud simples de usuários, utilizando JWt-Auth para assegurar que somente o Administrador possa executar as acções necessárias..
+A ideia é trazer um repositório com um Crud simples de usuários, utilizando Jwt-Auth para assegurar que somente o Administrador possa executar as ações necessárias..
 
 ## Como começar
 
@@ -71,9 +71,9 @@ Baixe/clone este repositório, na branch master, e execute os passos de instala�
 
 ### Pré-Requisitos
 
-PHP versão >= 7.4
-Composer
-MySQL versão >= 5.7
+-   PHP versão >= 7.4
+-   Composer
+-   MySQL versão >= 5.7
 
 ### Instalação
 
@@ -109,8 +109,11 @@ Visualizando o projeto
 
 Caso não esteja utilizando o docker do projeto, aponte a pasta `public/` desta aplicação para seu webserver favorito, abaixo segue um exemplo utilizando o webserver embutido do php:
 
+```
 // a partir da raiz do projeto
 $ php -S 127.0.0.1:8000 -t public/
+```
+
 E acesse em seu navegador a url `http://localhost:8000`.
 
 ## Sugestões
@@ -124,7 +127,3 @@ Para sugestões de melhoria e solicitações de tópicos para a série, fique a 
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-```
-
-```
