@@ -105,6 +105,16 @@ php artisan migrate
 pahp artisan db:seed
 ```
 
+**Gerando Secret Jwt**
+
+É preciso atualizar o seu arquivo `.env` com o `JWT_SECRET=foobar`.
+É a chave que será usada para assinar seus tokens.
+Execute o comando
+
+```
+php artisan jwt:secret
+```
+
 **Acessando as rotas de criação de usuários**
 
 Após realizar o login, é necessário copiar o token gerado, ir na rotas da pasta `Users` no `Postman`, na aba `Header`, colocar `Atuthorization`, no `value` colocar a palavra `bearer` e colar o token logo em seguida para conseguir realizar qualquer tipo de requisição.
