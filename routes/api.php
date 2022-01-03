@@ -20,13 +20,11 @@ use App\Http\Controllers\ClientsController;
 //     return $request->user();
 // });
 
+Route::post('login', [AuthController::class, 'login']);
+
 Route::group([
     'middleware' => ['jwt.verify'],
     'prefix' => 'auth'
 ], function ($router) {
-    Route::post('login', [AuthController::class, 'login']);
-    Route::post('logout', [AuthController::class, ' ']);
-    Route::post('refresh', [AuthController::class, 'refresh']);
-    Route::post('me', [AuthController::class, 'me']);
     Route::resource('clients', ClientsController::class, ['parameters' => ['clients' => 'id']]);
 });
