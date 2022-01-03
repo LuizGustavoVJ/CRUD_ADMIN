@@ -113,6 +113,10 @@ Após realizar o login, é necessário copiar o token gerado, ir na rotas da pas
 
 A coleção do `Postman` encontra-se no arquivo `EPTeste.postman_collection.jason`
 
+**Teste 2**
+
+O `Teste 2` encontra-se no arquivo `Teste2.pdf`
+
 **Visualizando o projeto**
 
 Caso não esteja utilizando o docker do projeto, aponte a pasta `public/` desta aplicação para seu webserver favorito, abaixo segue um exemplo utilizando o webserver embutido do php:
@@ -120,6 +124,16 @@ Caso não esteja utilizando o docker do projeto, aponte a pasta `public/` desta 
 ```
 // a partir da raiz do projeto
 $ php -S 127.0.0.1:8000 -t public/
+
+```
+
+ou
+
+//Digite no seu terminal
+
+```
+php artisan serve
+
 ```
 
 E acesse em seu navegador a url `http://localhost:8000`.
