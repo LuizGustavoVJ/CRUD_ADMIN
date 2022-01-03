@@ -105,7 +105,11 @@ php artisan migrate
 pahp artisan db:seed
 ```
 
-Visualizando o projeto
+**Acessando as rotas de criação de usuários**
+
+Após realizar o login, é necessário copiar o token gerado, ir na rotas da pasta `Users` no `Postman`, na aba `Header`, colocar `Atuthorization`, no `value` colocar a palavra `bearer` e colar o token logo em seguida para conseguir realizar qualquer tipo de requisição.
+
+**Visualizando o projeto**
 
 Caso não esteja utilizando o docker do projeto, aponte a pasta `public/` desta aplicação para seu webserver favorito, abaixo segue um exemplo utilizando o webserver embutido do php:
 

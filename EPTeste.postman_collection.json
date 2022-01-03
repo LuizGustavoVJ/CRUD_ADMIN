@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "ef288c6c-ff1f-413d-bdad-ef54c23fe736",
+		"name": "EPTeste",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get users",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true,
+							"user-agent": true,
+							"accept": true,
+							"accept-encoding": true,
+							"connection": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTY0MTE3MjEzNSwibmJmIjoxNjQxMTcyMTM1LCJqdGkiOiJVRDRVTUFUeEV5QUtrbHVkIiwic3ViIjoxLCJwcnYiOiIwMDg1N2QyN2NmYTI4Zjk0YjBhZjE0OTEyNWM4ZDFiYjViYzI3Mzk5IiwiaWQiOjEsImVtYWlsIjoidGVzdGVAbWFpbC5jb20ifQ.K9dEGxZaj9aY7P_0oTjgLIVOoj_PLP3Z0YhF167XH2A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/auth/clients",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get unique user",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"host": true,
+							"user-agent": true,
+							"accept": true,
+							"accept-encoding": true,
+							"connection": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTY0MTE3MjEzNSwibmJmIjoxNjQxMTcyMTM1LCJqdGkiOiJVRDRVTUFUeEV5QUtrbHVkIiwic3ViIjoxLCJwcnYiOiIwMDg1N2QyN2NmYTI4Zjk0YjBhZjE0OTEyNWM4ZDFiYjViYzI3Mzk5IiwiaWQiOjEsImVtYWlsIjoidGVzdGVAbWFpbC5jb20ifQ.K9dEGxZaj9aY7P_0oTjgLIVOoj_PLP3Z0YhF167XH2A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/auth/clients/18",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"clients",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTY0MTE3MjEzNSwibmJmIjoxNjQxMTcyMTM1LCJqdGkiOiJVRDRVTUFUeEV5QUtrbHVkIiwic3ViIjoxLCJwcnYiOiIwMDg1N2QyN2NmYTI4Zjk0YjBhZjE0OTEyNWM4ZDFiYjViYzI3Mzk5IiwiaWQiOjEsImVtYWlsIjoidGVzdGVAbWFpbC5jb20ifQ.K9dEGxZaj9aY7P_0oTjgLIVOoj_PLP3Z0YhF167XH2A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Teste Resource",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "resource@gamietcl6dt.com.br",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Resource",
+									"type": "text"
+								},
+								{
+									"key": "image_url",
+									"type": "file",
+									"src": "/C:/Users/Marilia/OneDrive/Imagens/Imagens da Câmera/LG.jpeg"
+								},
+								{
+									"key": "password",
+									"value": "10101010",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/auth/clients",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"clients"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Users",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearereyJeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0MTE2NDUyMCwibmJmIjoxNjQxMTY0NTIwLCJqdGkiOiJnRFBUem5TbTVUU0FNck5SIiwic3ViIjoxLCJwcnYiOiIwMDg1N2QyN2NmYTI4Zjk0YjBhZjE0OTEyNWM4ZDFiYjViYzI3Mzk5IiwiaWQiOjEsImVtYWlsIjoidGVzdGVAbWFpbC5jb20ifQ.T4UlaEfn4RWYcP4QcXAY3vllf9BGDOf3yghRJuWTWeU0eXAiOiJKV1QiLCJhbGciOeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0MTE2MzU2MiwibmJmIjoxNjQxMTYzNTYyLCJqdGkiOiJKS0R3ZWozejVmdDVXQUhKIiwic3ViIjoxLCJwcnYiOiIwMDg1N2QyN2NmYTI4Zjk0YjBhZjE0OTEyNWM4ZDFiYjViYzI3Mzk5IiwiaWQiOjEsImVtYWlsIjoidGVzdGVAbWFpbC5jb20ifQ.HRwlbJB9ZH0VrmSKbDlYPJghPYmWY4tsJpuTWb0ZJT4iJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0MTE1ODIzOCwiZXhwIjoxNjQxMTYxODM4LCJuYmYiOjE2NDExNTgyMzgsImp0aSI6InVlc0t3czhpTTJxZVZVdUgiLCJzdWIiOjEsInBydiI6IjAwODU3ZDI3Y2ZhMjhmOTRiMGFmMTQ5MTI1YzhkMWJiNWJjMjczOTkiLCJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUBtYWlsLmNvbSJ9.ZZ6vmHBUJbsPlGisqBnXI5nMOXD4Js4qeiUAsypuNM0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Teste Resource Atualizado",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "resource@gamietcl.com",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Resource Atualizado",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "10101010",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/auth/clients/14",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"clients",
+								"14"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Teste resource",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "resource@gamial.com",
+									"disabled": true
+								},
+								{
+									"key": "city",
+									"value": "Resource",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete users",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearereeyJ0eXAiOeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0MTE2NDUyMCwibmJmIjoxNjQxMTY0NTIwLCJqdGkiOiJnRFBUem5TbTVUU0FNck5SIiwic3ViIjoxLCJwcnYiOiIwMDg1N2QyN2NmYTI4Zjk0YjBhZjE0OTEyNWM4ZDFiYjViYzI3Mzk5IiwiaWQiOjEsImVtYWlsIjoidGVzdGVAbWFpbC5jb20ifQ.T4UlaEfn4RWYcP4QcXAY3vllf9BGDOf3yghRJuWTWeUiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0MTE2MzU2MiwibmJmIjoxNjQxMTYzNTYyLCJqdGkiOiJKS0R3ZWozejVmdDVXQUhKIiwic3ViIjoxLCJwcnYiOiIwMDg1N2QyN2NmYTI4Zjk0YjBhZjE0OTEyNWM4ZDFiYjViYzI3Mzk5IiwiaWQiOjEsImVtYWlsIjoidGVzdGVAbWFpbC5jb20ifQ.HRwlbJB9ZH0VrmSKbDlYPJghPYmWY4tsJpuTWb0ZJT4yJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0MTE1ODIzOCwiZXhwIjoxNjQxMTYxODM4LCJuYmYiOjE2NDExNTgyMzgsImp0aSI6InVlc0t3czhpTTJxZVZVdUgiLCJzdWIiOjEsInBydiI6IjAwODU3ZDI3Y2ZhMjhmOTRiMGFmMTQ5MTI1YzhkMWJiNWJjMjczOTkiLCJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUBtYWlsLmNvbSJ9.ZZ6vmHBUJbsPlGisqBnXI5nMOXD4Js4qeiUAsypuNM0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/auth/clients/14",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"clients",
+								"14"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Acces",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "teste@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "102030",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearereyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0MTE2MjAyOCwibmJmIjoxNjQxMTYyMDI4LCJqdGkiOiJWVzgyUUVIM1FaNHRnQ3VnIiwic3ViIjoxLCJwcnYiOiIwMDg1N2QyN2NmYTI4Zjk0YjBhZjE0OTEyNWM4ZDFiYjViYzI3Mzk5IiwiaWQiOjEsImVtYWlsIjoidGVzdGVAbWFpbC5jb20ifQ.DKEcpl7H01J0cxmbd_5HUD47oUI5CMYyiXoBrLqd788",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "teste@mail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "102030",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8000/api/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jan 2022 22:22:48 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Jan 2022 22:22:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0MTE2MjE2OCwibmJmIjoxNjQxMTYyMTY4LCJqdGkiOiJDdDE2TkpYWW5RTldNdllLIiwic3ViIjoxLCJwcnYiOiIwMDg1N2QyN2NmYTI4Zjk0YjBhZjE0OTEyNWM4ZDFiYjViYzI3Mzk5IiwiaWQiOjEsImVtYWlsIjoidGVzdGVAbWFpbC5jb20ifQ.Y3hSzLipl67fB6E_vhirpk3KoWzMPD1MIQLGKzzv69E\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
