@@ -61,59 +61,70 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-Conhecendo Jetstream
-A ideia é trazer um repositório junto aos posts do blog laraveling.tech na categoria jetstream para mostrar as funcionalidades do Jetstream, customizações e melhorias.
+# O Projeto
 
-Para cada tópico abordado será criado um branch com um nome sugestivo, desta forma, para visualizar tudo que é feito em um tópico, basta baixar/clonar o repositório e acessar o branch específico e acompanhar todo código feito.
+A ideia é trazer um repositório com um Crud simples de usuários, utilizando JWt-Auth para assegurar que somente o Administrador possa executar as acções necessárias..
 
-Como começar
-Baixe/clone este repositório e execute os passos de instalação abaixo.
+## Como começar
 
-Caso queira conhecer o jetstream antes de baixar o projeto eu criei um post de introdução ao jetstream e também recomendo fortemente a documentação oficial.
+Baixe/clone este repositório, na branch master, e execute os passos de instalação abaixo.
 
-Pré-Requisitos
+### Pré-Requisitos
+
 PHP versão >= 7.4
 Composer
 MySQL versão >= 5.7
-NodeJS e NPM/Yarn para compilar os assets
-Caso prefira utilizar docker, na raiz do projeto existe um arquivo docker-compose.yml com o ambiente pré-moldado.
 
-Neste caso é um pré-requisito ter o docker e docker-compose instalados.
+### Instalação
 
-Instalação
-A partir da raiz do projeto é necessário realizar algumas etapas para poder começar, como compilar os assets, criar o banco de dados etc. Uma ordem interessante para fazer tudo funcionar seria:
+A partir da raiz do projeto é necessário realizar algumas etapas para poder começar, como criar o banco de dados, instalar dependências etc. Uma ordem interessante para fazer tudo funcionar seria:
 
-Dependências
-Instalar dependências da parte do PHP:
+### Dependências
 
+**Instalar dependências da parte do PHP:**
+
+```
 composer install
-Criar um arquivo .env contendo suas conexões de banco de dados.
+```
 
-Neste repositório há um exemplo de .env em .env.example contendo as conexões de banco. Crie um BD com o nome de sua preferencia em DB_DATABASE, coloque sua senha em DB_PASSWORD.
+**Criar um arquivo `.env` contendo suas conexões de banco de dados.**
 
-Criar a estrutura do banco de dados.
+Neste repositório há um exemplo de `.env` em `.env.example` contendo as conexões de banco. Crie um BD com o nome de sua preferencia em `DB_DATABASE`, coloque sua senha em `DB_PASSWORD`.
 
-Uma vez configurado o .env executar o comando abaixo para criar a estrutura do banco de dados necessária para o projeto:
+**Criar a estrutura do banco de dados.**
 
+Uma vez configurado o `.env` executar o comando abaixo para criar a estrutura do banco de dados necessária para o projeto:
+
+```
 php artisan migrate
+```
 
-Para criar o Usuario Administrador do Sistemas rode o seguinte comando:
+**Para criar o Usuario Administrador do Sistemas rode o seguinte comando**
 
+```
 pahp artisan db:seed
+```
+
 Visualizando o projeto
 
-Caso não esteja utilizando o docker do projeto, aponte a pasta public/ desta aplicação para seu webserver favorito, abaixo segue um exemplo utilizando o webserver embutido do php:
+Caso não esteja utilizando o docker do projeto, aponte a pasta `public/` desta aplicação para seu webserver favorito, abaixo segue um exemplo utilizando o webserver embutido do php:
 
 // a partir da raiz do projeto
 $ php -S 127.0.0.1:8000 -t public/
-E acesse em seu navegador a url http://localhost:8000.
+E acesse em seu navegador a url `http://localhost:8000`.
 
-Sugestões
+## Sugestões
+
 Para sugestões de melhoria e solicitações de tópicos para a série, fique a vontade para abrir uma issue
 
-Autores
-Luiiz Gustavo Finotello - Github
+## Autores
+
+-   **Luiz Gustavo Finotello**
 
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+```
+
+```
